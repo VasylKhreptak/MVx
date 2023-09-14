@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using MVC.SlotMachine.Controllers.Core;
 using MVC.SlotMachine.Models.Core;
 
-namespace MVC.SlotMachine.Controllers.Core
+namespace MVC.SlotMachine.Controllers
 {
     public class AllLinesController : Controller
     {

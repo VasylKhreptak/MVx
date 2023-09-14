@@ -1,6 +1,7 @@
-﻿using MVC.SlotMachine.Views.Core;
+﻿using MVP.SlotMachine.Models.Core;
+using MVP.SlotMachine.Views.Core;
 
-namespace MVC.SlotMachine.Models.Core
+namespace MVP.SlotMachine.Models
 {
     public class LimitedSpinsModel : Model
     {

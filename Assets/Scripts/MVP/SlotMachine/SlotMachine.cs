@@ -1,18 +1,16 @@
-using MVC.SlotMachine.Controllers;
-using MVC.SlotMachine.Controllers.Core;
-using MVC.SlotMachine.Models;
-using MVC.SlotMachine.Models.Core;
-using MVC.SlotMachine.Views.Core;
+using MVP.SlotMachine.Models;
+using MVP.SlotMachine.Models.Core;
+using MVP.SlotMachine.Presenters;
+using MVP.SlotMachine.Presenters.Core;
+using MVP.SlotMachine.Views.Core;
 using UnityEngine;
-using UnityEngine.UI;
 
-namespace MVC.SlotMachine
+namespace MVP.SlotMachine
 {
     public class SlotMachine : MonoBehaviour
     {
         [Header("References")]
         [SerializeField] private View _mainView;
-        [SerializeField] private Button _spinButton;
 
         [Header("Preferences")]
         [SerializeField] private int _spinsCount = -1;
@@ -28,11 +26,11 @@ namespace MVC.SlotMachine
                 ? new UnlimitedSpinsModel(_mainView)
                 : new LimitedSpinsModel(_mainView, _spinsCount);
 
-            Controller controller = _middleLineWin
-                ? new MiddleLineController(model)
-                : new AllLinesController(model);
+            Presenter presenter = _middleLineWin
+                ? new MiddleLinePresenter(model)
+                : new AllLinesPresenter(model);
 
-            _spinButton.onClick.AddListener(controller.Spin);
+            _mainView.Initialize(presenter);
         }
 
         #endregion

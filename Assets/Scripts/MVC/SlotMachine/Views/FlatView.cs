@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using MVC.SlotMachine.Views.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace MVC.SlotMachine.Views.Core
+namespace MVC.SlotMachine.Views
 {
     public class FlatView : View
     {
